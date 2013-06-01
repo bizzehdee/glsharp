@@ -1,4 +1,7 @@
-glsharp
+GLSharp
 =======
 
-Windows OpenGL implementation for .NET framework
+Modernised OOP style Windows OpenGL implementation for .NET framework.
+
+Langage: Mixed Native/Managed C++
+License: BSD
