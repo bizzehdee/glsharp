@@ -3,12 +3,20 @@
 
 void System::Drawing::GLSharp::GL::Accum(GL_FLAGS op, float val)
 {
-	glAccum((int)op, val);
+	glAccum((unsigned int)op, val);
 }
 
 void System::Drawing::GLSharp::GL::AlphaFunc(GL_FLAGS flags, float ref)
 {
-	glAlphaFunc((int)flags, ref);
+	glAlphaFunc((unsigned int)flags, ref);
+}
+
+Boolean System::Drawing::GLSharp::GL::AreTexturesResident(int n, array<UInt32> ^textures, array<unsigned char> ^residences)
+{
+  pin_ptr<UInt32> m_textures_ptr = &textures[0];
+  pin_ptr<unsigned char> m_residences_ptr = &residences[0];
+
+  return !!glAreTexturesResident(n, m_textures_ptr, m_residences_ptr);
 }
 
 void System::Drawing::GLSharp::GL::ArrayElement(int i)
@@ -18,12 +26,12 @@ void System::Drawing::GLSharp::GL::ArrayElement(int i)
 
 void System::Drawing::GLSharp::GL::Begin(GL_FLAGS flags)
 {
-	glBegin((int)flags);
+	glBegin((unsigned int)flags);
 }
 
 void System::Drawing::GLSharp::GL::BindTexture(BIND_FLAGS target, UInt32 tx)
 {
-  glBindTexture((int)target, tx);
+  glBindTexture((unsigned int)target, tx);
 }
 
 void System::Drawing::GLSharp::GL::Bitmap(int width, int height, float xorig, float yorig, float xmove, float ymove, array<byte> ^bitmap)
@@ -35,7 +43,7 @@ void System::Drawing::GLSharp::GL::Bitmap(int width, int height, float xorig, fl
 
 void System::Drawing::GLSharp::GL::BlendFunc(GL_FLAGS sfactor, GL_FLAGS dfactor)
 {
-  glBlendFunc((int)sfactor, (int)dfactor);
+  glBlendFunc((unsigned int)sfactor, (unsigned int)dfactor);
 }
 
 void System::Drawing::GLSharp::GL::CallList(UInt32 list)
@@ -45,7 +53,7 @@ void System::Drawing::GLSharp::GL::CallList(UInt32 list)
 
 void System::Drawing::GLSharp::GL::Clear(GL_FLAGS flags)
 {
-	glClear((int)flags);
+	glClear((unsigned int)flags);
 }
 
 void System::Drawing::GLSharp::GL::ClearAccum(float r, float g, float b, float a)
@@ -73,39 +81,46 @@ void System::Drawing::GLSharp::GL::ClearStencil(int s)
 	glClearStencil(s);
 }
 
+void System::Drawing::GLSharp::GL::ClipPlane(GL_FLAGS plane, array<double> ^equation)
+{
+  pin_ptr<double> m_equation_ptr = &equation[0];
+
+  glClipPlane((unsigned int)plane, m_equation_ptr);
+}
+
 void System::Drawing::GLSharp::GL::ColorMaterial(GL_FLAGS face, GL_FLAGS mode)
 {
-  glColorMaterial((int)face, (int)mode);
+  glColorMaterial((unsigned int)face, (unsigned int)mode);
 }
 
 void System::Drawing::GLSharp::GL::CopyPixels(int x, int y, int width, int height, GL_FLAGS type)
 {
-  glCopyPixels(x,y,width,height,(int)type);
+  glCopyPixels(x,y,width,height,(unsigned int)type);
 }
 
 void System::Drawing::GLSharp::GL::CopyTexImage1D(GL_FLAGS target, int level, GL_FLAGS internalFormat, int x, int y, int width, int border)
 {
-  glCopyTexImage1D((int)target, level, (int)internalFormat, x, y, width, border);
+  glCopyTexImage1D((unsigned int)target, level, (unsigned int)internalFormat, x, y, width, border);
 }
 
 void System::Drawing::GLSharp::GL::CopyTexImage2D(GL_FLAGS target, int level, GL_FLAGS internalFormat, int x, int y, int width, int height, int border)
 {
-  glCopyTexImage2D((int)target, level, (int)internalFormat, x, y, width, height, border);
+  glCopyTexImage2D((unsigned int)target, level, (unsigned int)internalFormat, x, y, width, height, border);
 }
 
 void System::Drawing::GLSharp::GL::CopyTexSubImage1D(GL_FLAGS target, int level, int xoffset, int x, int y, int width)
 {
-  glCopyTexSubImage1D((int)target, level, xoffset, x, y, width);
+  glCopyTexSubImage1D((unsigned int)target, level, xoffset, x, y, width);
 }
 
 void System::Drawing::GLSharp::GL::CopyTexSubImage2D(GL_FLAGS target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 {
-  glCopyTexSubImage2D((int)target, level, xoffset, yoffset, x, y, width, height);
+  glCopyTexSubImage2D((unsigned int)target, level, xoffset, yoffset, x, y, width, height);
 }
 
 void System::Drawing::GLSharp::GL::CullFace(GL_FLAGS mode)
 {
-  glCullFace((int)mode);
+  glCullFace((unsigned int)mode);
 }
 
 void System::Drawing::GLSharp::GL::DeleteLists(UInt32 list, int range)
@@ -113,9 +128,16 @@ void System::Drawing::GLSharp::GL::DeleteLists(UInt32 list, int range)
   glDeleteLists(list, range);
 }
 
+void System::Drawing::GLSharp::GL::DeleteTextures(int size, array<UInt32> ^textures)
+{
+  pin_ptr<UInt32> m_textures_ptr = &textures[0];
+
+  glDeleteTextures(size, m_textures_ptr);
+}
+
 void System::Drawing::GLSharp::GL::DepthFunc(GL_FLAGS func)
 {
-  glDepthFunc((int)func);
+  glDepthFunc((unsigned int)func);
 }
 
 void System::Drawing::GLSharp::GL::DepthMask(byte flag)
@@ -130,22 +152,22 @@ void System::Drawing::GLSharp::GL::DepthRange(double zNear, double zFar)
 
 void System::Drawing::GLSharp::GL::Disable(GL_FLAGS flags)
 {
-	glDisable((int)flags);
+	glDisable((unsigned int)flags);
 }
 
 void System::Drawing::GLSharp::GL::DisableClientState(GL_FLAGS ar)
 {
-	glDisableClientState((int)ar);
+	glDisableClientState((unsigned int)ar);
 }
 
 void System::Drawing::GLSharp::GL::DrawArrays(GL_FLAGS mode, int first, int count)
 {
-	glDrawArrays((int)mode, first, count);
+	glDrawArrays((unsigned int)mode, first, count);
 }
 
 void System::Drawing::GLSharp::GL::DrawBuffer(GL_FLAGS mode)
 {
-	glDrawBuffer((int)mode);
+	glDrawBuffer((unsigned int)mode);
 }
 
 void System::Drawing::GLSharp::GL::EdgeFlag(Boolean flag)
@@ -155,12 +177,12 @@ void System::Drawing::GLSharp::GL::EdgeFlag(Boolean flag)
 
 void System::Drawing::GLSharp::GL::Enable(GL_FLAGS flags)
 {
-	glEnable((int)flags);
+	glEnable((unsigned int)flags);
 }
 
 void System::Drawing::GLSharp::GL::EnableClientState(GL_FLAGS ar)
 {
-	glEnableClientState((int)ar);
+	glEnableClientState((unsigned int)ar);
 }
 
 void System::Drawing::GLSharp::GL::End()
@@ -195,12 +217,12 @@ void System::Drawing::GLSharp::GL::EvalCoord2f(float u, float v)
 
 void System::Drawing::GLSharp::GL::EvalMesh1(GL_FLAGS mode, int i1, int i2)
 {
-	glEvalMesh1((int)mode, i1, i2);
+	glEvalMesh1((unsigned int)mode, i1, i2);
 }
 
 void System::Drawing::GLSharp::GL::EvalMesh2(GL_FLAGS mode, int i1, int i2, int j1, int j2)
 {
-	glEvalMesh2((int)mode, i1, i2, j1, j2);
+	glEvalMesh2((unsigned int)mode, i1, i2, j1, j2);
 }
 
 void System::Drawing::GLSharp::GL::EvalPoint1(int i)
@@ -225,7 +247,7 @@ void System::Drawing::GLSharp::GL::Flush()
 
 void System::Drawing::GLSharp::GL::FrontFace(GL_FLAGS mode)
 {
-	glFrontFace((int)mode);
+	glFrontFace((unsigned int)mode);
 }
 
 void System::Drawing::GLSharp::GL::Frustum(Double left, Double right, Double bottom, Double top, Double nearVal, Double farVal)
@@ -233,9 +255,50 @@ void System::Drawing::GLSharp::GL::Frustum(Double left, Double right, Double bot
 	glFrustum(left, right, bottom, top, nearVal, farVal);
 }
 
-unsigned int System::Drawing::GLSharp::GL::GenLists(int range)
+UInt32 System::Drawing::GLSharp::GL::GenLists(int range)
 {
 	return glGenLists(range);
+}
+
+void System::Drawing::GLSharp::GL::GenTextures(int n, array<UInt32> ^%textures)
+{
+  UInt32 *t = new UInt32[n];
+
+  glGenTextures(n, t);
+
+  for(int i=0; i<n; i++)
+  {
+    textures[i] = t[n];
+  }
+
+  delete t;
+}
+
+void System::Drawing::GLSharp::GL::GetBooleanv(GL_FLAGS pname, array<unsigned char> ^%param)
+{
+  unsigned char p;
+  glGetBooleanv((unsigned int)pname, &p);
+
+  param[0] = p;
+}
+
+void System::Drawing::GLSharp::GL::GetClipPlane(GL_FLAGS plane, array<double> ^%equation)
+{
+  double m_equation[4];
+  glGetClipPlane((unsigned int)plane, m_equation);
+
+  equation[0] = m_equation[0];
+  equation[1] = m_equation[1];
+  equation[2] = m_equation[2];
+  equation[3] = m_equation[3];
+}
+
+void System::Drawing::GLSharp::GL::GetDoublev(GL_FLAGS pname, array<double> ^%param)
+{
+  double p;
+  glGetDoublev((unsigned int)pname, &p);
+
+  param[0] = p;
 }
 
 System::Drawing::GLSharp::GL::GL_FLAGS System::Drawing::GLSharp::GL::GetError()
@@ -243,9 +306,145 @@ System::Drawing::GLSharp::GL::GL_FLAGS System::Drawing::GLSharp::GL::GetError()
 	return (System::Drawing::GLSharp::GL::GL_FLAGS)glGetError();
 }
 
+void System::Drawing::GLSharp::GL::GetFloatv(GL_FLAGS pname, array<float> ^%param)
+{
+  float p;
+  glGetFloatv((unsigned int)pname, &p);
+
+  param[0] = p;
+}
+
+void System::Drawing::GLSharp::GL::GetIntegerv(GL_FLAGS pname, array<int> ^%param)
+{
+  int p;
+  glGetIntegerv((unsigned int)pname, &p);
+
+  param[0] = p;
+}
+
+void System::Drawing::GLSharp::GL::GetLightfv(GL_FLAGS light, GL_FLAGS pname, array<float> ^%params)
+{
+  float m_params[4];
+
+  glGetLightfv((unsigned int)light, (unsigned int)pname, m_params);
+
+  params[0] = m_params[0];
+  params[1] = m_params[1];
+  params[2] = m_params[2];
+  params[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetLightiv(GL_FLAGS light, GL_FLAGS pname, array<int> ^%params)
+{
+  int m_params[4];
+
+  glGetLightiv((unsigned int)light, (unsigned int)pname, m_params);
+
+  params[0] = m_params[0];
+  params[1] = m_params[1];
+  params[2] = m_params[2];
+  params[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetMapdv(GL_FLAGS target, GL_FLAGS query, array<double> ^%v)
+{
+  double m_params[4];
+
+  glGetMapdv((unsigned int)target, (unsigned int)query, m_params);
+
+  v[0] = m_params[0];
+  v[1] = m_params[1];
+  v[2] = m_params[2];
+  v[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetMapfv(GL_FLAGS target, GL_FLAGS query, array<float> ^%v)
+{
+  float m_params[4];
+
+  glGetMapfv((unsigned int)target, (unsigned int)query, m_params);
+
+  v[0] = m_params[0];
+  v[1] = m_params[1];
+  v[2] = m_params[2];
+  v[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetMapiv(GL_FLAGS target, GL_FLAGS query, array<int> ^%v)
+{
+  int m_params[4];
+
+  glGetMapiv((unsigned int)target, (unsigned int)query, m_params);
+
+  v[0] = m_params[0];
+  v[1] = m_params[1];
+  v[2] = m_params[2];
+  v[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetMaterialfv(GL_FLAGS face, GL_FLAGS pname, array<float> ^%params)
+{
+  float m_params[4];
+
+  glGetMaterialfv((unsigned int)face, (unsigned int)pname, m_params);
+
+  params[0] = m_params[0];
+  params[1] = m_params[1];
+  params[2] = m_params[2];
+  params[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetMaterialiv(GL_FLAGS face, GL_FLAGS pname, array<int> ^%params)
+{
+  int m_params[4];
+
+  glGetMaterialiv((unsigned int)face, (unsigned int)pname, m_params);
+
+  params[0] = m_params[0];
+  params[1] = m_params[1];
+  params[2] = m_params[2];
+  params[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetPixelMapfv(GL_FLAGS map, array<float> ^%values)
+{
+  float m_params[4];
+
+  glGetPixelMapfv((unsigned int)map, m_params);
+
+  values[0] = m_params[0];
+  values[1] = m_params[1];
+  values[2] = m_params[2];
+  values[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetPixelMapuiv(GL_FLAGS map, array<unsigned int> ^%values)
+{
+  unsigned int m_params[4];
+
+  glGetPixelMapuiv((unsigned int)map, m_params);
+
+  values[0] = m_params[0];
+  values[1] = m_params[1];
+  values[2] = m_params[2];
+  values[3] = m_params[3];
+}
+
+void System::Drawing::GLSharp::GL::GetPixelMapusv(GL_FLAGS map, array<unsigned short> ^%values)
+{
+  unsigned short m_params[4];
+
+  glGetPixelMapusv((unsigned int)map, m_params);
+
+  values[0] = m_params[0];
+  values[1] = m_params[1];
+  values[2] = m_params[2];
+  values[3] = m_params[3];
+}
+
 void System::Drawing::GLSharp::GL::MatrixMode(GL_FLAGS mode)
 {
-	glMatrixMode((int)mode);
+	glMatrixMode((unsigned int)mode);
 }
 
 void System::Drawing::GLSharp::GL::Viewport(Int32 x, Int32 y, Int32 w, Int32 h)
@@ -396,12 +595,12 @@ void System::Drawing::GLSharp::GL::ColorMask(Boolean r, Boolean g, Boolean b, Bo
 
 void System::Drawing::GLSharp::GL::Fogf(GL_FLAGS name, float param)
 {
-	glFogf((int)name, param);
+	glFogf((unsigned int)name, param);
 }
 
 void System::Drawing::GLSharp::GL::Fogi(GL_FLAGS name, int param)
 {
-	glFogi((int)name, param);
+	glFogi((unsigned int)name, param);
 }
 
 void System::Drawing::GLSharp::GL::Normal3f(float x, float y, float z)
