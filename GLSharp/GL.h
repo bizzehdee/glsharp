@@ -599,7 +599,7 @@ namespace System {
 
 				void Accum(GL_FLAGS op, float val);
 				void AlphaFunc(GL_FLAGS flags, float ref);
-        Boolean AreTexturesResident(int n, array<UInt32> ^textures, array<unsigned char> ^residences);
+				Boolean AreTexturesResident(int n, array<UInt32> ^textures, array<unsigned char> ^residences);
 				void ArrayElement(int i);
 				void Begin(GL_FLAGS flags);
 				void BindTexture(BIND_FLAGS target, UInt32 tx);
@@ -612,7 +612,7 @@ namespace System {
 				void ClearDepth(double d);
 				void ClearIndex(float c);
 				void ClearStencil(int s);
-        void ClipPlane(GL_FLAGS plane, array<double> ^equation);
+				void ClipPlane(GL_FLAGS plane, array<double> ^equation);
 				void ColorMask(Boolean r, Boolean g, Boolean b, Boolean a);
 				void ColorMaterial(GL_FLAGS face, GL_FLAGS mode);
 				void CopyPixels(int x, int y, int width, int height, GL_FLAGS type);/**/
@@ -622,7 +622,7 @@ namespace System {
 				void CopyTexSubImage2D(GL_FLAGS target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
 				void CullFace(GL_FLAGS mode);
 				void DeleteLists(UInt32 list, int range);
-        void DeleteTextures(int size, array<UInt32> ^textures);
+				void DeleteTextures(int size, array<UInt32> ^textures);
 				void DepthFunc(GL_FLAGS func);
 				void DepthMask(byte flag);
 				void DepthRange(double zNear, double zFar);
@@ -648,23 +648,23 @@ namespace System {
 				void FrontFace(GL_FLAGS mode);
 				void Frustum(Double left, Double right, Double bottom, Double top, Double nearVal, Double farVal);
 				UInt32 GenLists(int range);
-        void GenTextures(int n, array<UInt32> ^%textures);
-        void GetBooleanv(GL_FLAGS pname, array<unsigned char> ^%param);
-        void GetClipPlane(GL_FLAGS plane, array<double> ^%equation);
-        void GetDoublev(GL_FLAGS pname, array<double> ^%param);
+				void GenTextures(int n, array<UInt32> ^%textures);
+				void GetBooleanv(GL_FLAGS pname, array<unsigned char> ^%param);
+				void GetClipPlane(GL_FLAGS plane, array<double> ^%equation);
+				void GetDoublev(GL_FLAGS pname, array<double> ^%param);
 				GL_FLAGS GetError();
-        void GetFloatv(GL_FLAGS pname, array<float> ^%param);
-        void GetIntegerv(GL_FLAGS pname, array<int> ^%param);
-        void GetLightfv(GL_FLAGS light, GL_FLAGS pname, array<float> ^%params);
-        void GetLightiv(GL_FLAGS light, GL_FLAGS pname, array<int> ^%params);
-        void GetMapdv(GL_FLAGS target, GL_FLAGS query, array<double> ^%v);
-        void GetMapfv(GL_FLAGS target, GL_FLAGS query, array<float> ^%v);
-        void GetMapiv(GL_FLAGS target, GL_FLAGS query, array<int> ^%v);
-        void GetMaterialfv(GL_FLAGS face, GL_FLAGS pname, array<float> ^%params);
-        void GetMaterialiv(GL_FLAGS face, GL_FLAGS pname, array<int> ^%params);
-        void GetPixelMapfv(GL_FLAGS map, array<float> ^%values);
-        void GetPixelMapuiv(GL_FLAGS map, array<unsigned int> ^%values);
-        void GetPixelMapusv(GL_FLAGS map, array<unsigned short> ^%values);
+				void GetFloatv(GL_FLAGS pname, array<float> ^%param);
+				void GetIntegerv(GL_FLAGS pname, array<int> ^%param);
+				void GetLightfv(GL_FLAGS light, GL_FLAGS pname, array<float> ^%params);
+				void GetLightiv(GL_FLAGS light, GL_FLAGS pname, array<int> ^%params);
+				void GetMapdv(GL_FLAGS target, GL_FLAGS query, array<double> ^%v);
+				void GetMapfv(GL_FLAGS target, GL_FLAGS query, array<float> ^%v);
+				void GetMapiv(GL_FLAGS target, GL_FLAGS query, array<int> ^%v);
+				void GetMaterialfv(GL_FLAGS face, GL_FLAGS pname, array<float> ^%params);
+				void GetMaterialiv(GL_FLAGS face, GL_FLAGS pname, array<int> ^%params);
+				void GetPixelMapfv(GL_FLAGS map, array<float> ^%values);
+				void GetPixelMapuiv(GL_FLAGS map, array<unsigned int> ^%values);
+				void GetPixelMapusv(GL_FLAGS map, array<unsigned short> ^%values);
 				void MatrixMode(GL_FLAGS mode);
 				void Viewport(Int32 x, Int32 y, Int32 w, Int32 h);
 
