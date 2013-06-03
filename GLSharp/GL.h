@@ -1,6 +1,10 @@
 #pragma once
 
+#using <System.Reflection.dll>
+
 using namespace System;
+using namespace System::Reflection;
+using namespace System::Runtime::InteropServices;
 
 namespace System {
 	namespace Drawing {
@@ -665,6 +669,31 @@ namespace System {
 				void GetPixelMapfv(GL_FLAGS map, array<float> ^%values);
 				void GetPixelMapuiv(GL_FLAGS map, array<unsigned int> ^%values);
 				void GetPixelMapusv(GL_FLAGS map, array<unsigned short> ^%values);
+				void GetPolygonStipple(array<unsigned char> ^%v);
+				array<unsigned char> ^GetString(GL_FLAGS name);
+				void GetTexEnvfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
+				void GetTexEnviv(GL_FLAGS target, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
+				void GetTexGendv(GL_FLAGS coord, GL_FLAGS pname, array<double> ^%params);/*not implemented*/
+				void GetTexGenfv(GL_FLAGS coord, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
+				void GetTexGeniv(GL_FLAGS coord, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
+				void GetTexImage(GL_FLAGS target, GLint level, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^%pixels);/*not implemented*/
+				void GetTexLevelParameterfv(GL_FLAGS target, GLint level, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
+				void GetTexLevelParameteriv(GL_FLAGS target, GLint level, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
+				void GetTexParameterfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
+				void GetTexParameteriv(GL_FLAGS target, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
+				void IndexMask(unsigned int mask);
+				void IndexPointer(GL_FLAGS type, int stride, array<IntPtr> ^%pointer);
+				void Indexd(double c);
+				void Indexdv(array<double> ^%c);
+				void Indexf(float c);
+				void Indexfv(array<float> ^%c);
+				void Indexi(int c);
+				void Indexiv(array<int> ^%c);
+				void Indexs(short c);
+				void Indexsv(array<short> ^%c);
+				void Indexub(unsigned char c);
+				void Indexubv(array<unsigned char> ^%c);
+				void InitNames();
 				void MatrixMode(GL_FLAGS mode);
 				void Viewport(Int32 x, Int32 y, Int32 w, Int32 h);
 
