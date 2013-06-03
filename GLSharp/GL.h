@@ -649,6 +649,8 @@ namespace System {
 				void EvalPoint2(int i, int j);
 				void Finish();
 				void Flush();
+				void Fogf(GL_FLAGS name, float param);
+				void Fogi(GL_FLAGS name, int param);
 				void FrontFace(GL_FLAGS mode);
 				void Frustum(Double left, Double right, Double bottom, Double top, Double nearVal, Double farVal);
 				UInt32 GenLists(int range);
@@ -667,7 +669,7 @@ namespace System {
 				void GetMaterialfv(GL_FLAGS face, GL_FLAGS pname, array<float> ^%params);
 				void GetMaterialiv(GL_FLAGS face, GL_FLAGS pname, array<int> ^%params);
 				void GetPixelMapfv(GL_FLAGS map, array<float> ^%values);
-				void GetPixelMapuiv(GL_FLAGS map, array<unsigned int> ^%values);
+				void GetPixelMapuiv(GL_FLAGS map, array<UInt32> ^%values);
 				void GetPixelMapusv(GL_FLAGS map, array<unsigned short> ^%values);
 				void GetPolygonStipple(array<unsigned char> ^%v);
 				array<unsigned char> ^GetString(GL_FLAGS name);
@@ -676,12 +678,12 @@ namespace System {
 				void GetTexGendv(GL_FLAGS coord, GL_FLAGS pname, array<double> ^%params);/*not implemented*/
 				void GetTexGenfv(GL_FLAGS coord, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
 				void GetTexGeniv(GL_FLAGS coord, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
-				void GetTexImage(GL_FLAGS target, GLint level, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^%pixels);/*not implemented*/
-				void GetTexLevelParameterfv(GL_FLAGS target, GLint level, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
-				void GetTexLevelParameteriv(GL_FLAGS target, GLint level, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
+				void GetTexImage(GL_FLAGS target, int level, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^%pixels);/*not implemented*/
+				void GetTexLevelParameterfv(GL_FLAGS target, int level, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
+				void GetTexLevelParameteriv(GL_FLAGS target, int level, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
 				void GetTexParameterfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^%params);/*not implemented*/
 				void GetTexParameteriv(GL_FLAGS target, GL_FLAGS pname, array<int> ^%params);/*not implemented*/
-				void IndexMask(unsigned int mask);
+				void IndexMask(UInt32 mask);
 				void IndexPointer(GL_FLAGS type, int stride, array<IntPtr> ^%pointer);
 				void Indexd(double c);
 				void Indexdv(array<double> ^%c);
@@ -694,7 +696,76 @@ namespace System {
 				void Indexub(unsigned char c);
 				void Indexubv(array<unsigned char> ^%c);
 				void InitNames();
+				void InterleavedArrays(GL_FLAGS format, int stride, array<IntPtr> ^%pixels);/*not implemented*/
+				Boolean IsEnabled(GL_FLAGS cap);
+				Boolean IsList(UInt32 list);
+				Boolean IsTexture(UInt32 texture);
+				void LightModelf(GL_FLAGS pname, float param);
+				void LightModelfv(GL_FLAGS pname, array<float> ^%params);
+				void LightModeli(GL_FLAGS pname, int param);
+				void LightModeliv(GL_FLAGS pname, array<int> ^%params);
+				void Lightf(GL_FLAGS light, GL_FLAGS pname, float param);
+				void Lightfv(GL_FLAGS light, GL_FLAGS pname, array<float> ^%params);
+				void Lighti(GL_FLAGS light, GL_FLAGS pname, int param);
+				void Lightiv(GL_FLAGS light, GL_FLAGS pname, array<int> ^%params);
+				void LineStipple(int factor, unsigned short pattern);
+				void LineWidth(float width);
+				void ListBase(UInt32 base);
+				void LoadIdentity();
+				void LoadMatrixd(array<double> ^%m);
+				void LoadMatrixf(array<float> ^%m);
+				void LoadName(UInt32 name);
+				void LogicOp(GL_FLAGS opcode);
+				void Map1d(GL_FLAGS target, double u1, double u2, int stride, int order, array<double> ^%points);
+				void Map1f(GL_FLAGS target, float u1, float u2, int stride, int order, array<float> ^%points);
+				void Map2d(GL_FLAGS target, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, array<double> ^%points);
+				void Map2f(GL_FLAGS target, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, array<float> ^%points);
+				void MapGrid1d(int un, double u1, double u2);
+				void MapGrid1f(int un, float u1, float u2);
+				void MapGrid2d(int un, double u1, double u2, int vn, double v1, double v2);
+				void MapGrid2f(int un, float u1, float u2, int vn, float v1, float v2);
+				void Materialf(GL_FLAGS face, GL_FLAGS pname, float param);
+				void Materialfv(GL_FLAGS face, GL_FLAGS pname, array<float> ^%params);
+				void Materiali(GL_FLAGS face, GL_FLAGS pname, int param);
+				void Materialiv(GL_FLAGS face, GL_FLAGS pname, array<int> ^%params);
 				void MatrixMode(GL_FLAGS mode);
+				void MultMatrixd(array<double> ^%m);
+				void MultMatrixf(array<float> ^%m);
+				void NewList(UInt32 list, GL_FLAGS mode);
+				void NormalPointer(GL_FLAGS type, int stride, array<IntPtr> ^pointer);
+				void Ortho(double left, double right, double bottom, double top, double zNear, double zFar);
+				void PassThrough(float token);
+				void PixelMapfv(GL_FLAGS map, int mapsize, array<float> ^values);
+				void PixelMapuiv(GL_FLAGS map, int mapsize, array<UInt32> ^values);
+				void PixelMapusv(GL_FLAGS map, int mapsize, array<unsigned short> ^values);
+				void PixelStoref(GL_FLAGS pname, float param);
+				void PixelStorei(GL_FLAGS pname, int param);
+				void PixelTransferf(GL_FLAGS pname, float param);
+				void PixelTransferi(GL_FLAGS pname, int param);
+				void PixelZoom(float xfactor, float yfactor);
+				void PointSize(float size);
+				void PolygonMode(GL_FLAGS face, GL_FLAGS mode);
+				void PolygonOffset(float factor, float units);
+				void PolygonStipple(array<unsigned char> ^mask);
+				void PopAttrib();
+				void PopClientAttrib();
+				void PopMatrix();
+				void PopName();
+				void PrioritizeTextures(int n, array<UInt32> ^textures, array<float> ^priorities);
+				void PushAttrib(UInt32 mask);
+				void PushClientAttrib(UInt32 mask);
+				void PushMatrix();
+				void PushName(UInt32 name);
+				void ReadBuffer(GL_FLAGS mode);
+				void ReadPixels(int x, int y, int width, int height, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pixels);
+				int RenderMode(GL_FLAGS mode);
+				void Scissor(int x, int y, int width, int height);
+				void SelectBuffer(int size, array<UInt32> ^buffer);
+				void ShadeModel(GL_FLAGS mode);
+				void StencilFunc(GL_FLAGS func, int ref, UInt32 mask);
+				void StencilMask(UInt32 mask);
+				void StencilOp(GL_FLAGS fail, GL_FLAGS zfail, GL_FLAGS zpass);
+				void TexCoordPointer(int size, GL_FLAGS type, int stride, array<IntPtr> ^pointer);
 				void Viewport(Int32 x, Int32 y, Int32 w, Int32 h);
 
 				/**/
@@ -727,11 +798,6 @@ namespace System {
 				/**/
 
 				/**/
-				void Fogf(GL_FLAGS name, float param);
-				void Fogi(GL_FLAGS name, int param);
-				/**/
-
-				/**/
 				void Normal3f(float x, float y, float z);
 				void Normal3d(double x, double y, double z);
 				void Normal3i(int x, int y, int z);
@@ -746,10 +812,41 @@ namespace System {
 				/**/
 
 				/**/
+				void RasterPos2d(double x, double y);
+				void RasterPos2dv(array<double> ^v);
+				void RasterPos2f(float x, float y);
+				void RasterPos2fv(array<float> ^v);
+				void RasterPos2i(int x, int y);
+				void RasterPos2iv(array<int> ^v);
+				void RasterPos2s(short x, short y);
+				void RasterPos2sv(array<short> ^v);
+				void RasterPos3d(double x, double y, double z);
+				void RasterPos3dv(array<double> ^v);
+				void RasterPos3f(float x, float y, float z);
+				void RasterPos3fv(array<float> ^v);
+				void RasterPos3i(int x, int y, int z);
+				void RasterPos3iv(array<int> ^v);
+				void RasterPos3s(short x, short y, short z);
+				void RasterPos3sv(array<short> ^v);
+				void RasterPos4d(double x, double y, double z, double w);
+				void RasterPos4dv(array<double> ^v);
+				void RasterPos4f(float x, float y, float z, float w);
+				void RasterPos4fv(array<float> ^v);
+				void RasterPos4i(int x, int y, int z, int w);
+				void RasterPos4iv(array<int> ^v);
+				void RasterPos4s(short x, short y, short z, short w);
+				void RasterPos4sv(array<short> ^v);
+				/**/
+
+				/**/
 				void Rectf(float x1, float y1, float x2, float y2);
 				void Rectd(double x1, double y1, double x2, double y2);
 				void Recti(int x1, int y1, int x2, int y2);
 				void Rects(short x1, short y1, short x2, short y2);
+				void Rectfv(array<float> ^v1, array<float> ^v2);
+				void Rectdv(array<double> ^v1, array<double> ^v2);
+				void Rectiv(array<int> ^v1, array<int> ^v2);
+				void Rectsv(array<short> ^v1, array<short> ^v2);
 				/**/
 
 				/**/
