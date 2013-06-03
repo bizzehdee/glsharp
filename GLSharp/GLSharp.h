@@ -27,6 +27,15 @@ namespace System {
 				void Color(array<short> ^v);
 				void Color(array<byte> ^v);
 
+				void EvalCoord(double u);
+				void EvalCoord(float u);
+				void EvalCoord(double u, double v);
+				void EvalCoord(float u, float v);
+				void EvalMesh(GL_FLAGS mode, int i1, int i2);
+				void EvalMesh(GL_FLAGS mode, int i1, int i2, int j1, int j2);
+				void EvalPoint(int i);
+				void EvalPoint(int i, int j);
+
 				void Fog(GL_FLAGS name, float param);
 				void Fog(GL_FLAGS name, int param);
 
@@ -41,6 +50,23 @@ namespace System {
 				void Normal(array<int> ^v);
 				void Normal(array<short> ^v);
 				void Normal(array<char> ^v);
+
+				void RasterPos(double x, double y);
+				void RasterPos(float x, float y);
+				void RasterPos(int x, int y);
+				void RasterPos(short x, short y);
+				void RasterPos(double x, double y, double z);
+				void RasterPos(float x, float y, float z);
+				void RasterPos(int x, int y, int z);
+				void RasterPos(short x, short y, short z);
+				void RasterPos(double x, double y, double z, double w);
+				void RasterPos(float x, float y, float z, float w);
+				void RasterPos(int x, int y, int z, int w);
+				void RasterPos(short x, short y, short z, short w);
+				void RasterPos(array<double> ^v);
+				void RasterPos(array<float> ^v);
+				void RasterPos(array<int> ^v);
+				void RasterPos(array<short> ^v);
 
 				void Rect(float x1, float y1, float x2, float y2);
 				void Rect(double x1, double y1, double x2, double y2);

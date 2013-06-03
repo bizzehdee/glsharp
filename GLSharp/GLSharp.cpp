@@ -77,6 +77,46 @@ void System::Drawing::GLSharp::GLSharp::Color(array<byte> ^v)
 	}
 }
 
+void System::Drawing::GLSharp::GLSharp::EvalCoord(double u)
+{
+	GL::EvalCoord1d(u);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalCoord(float u)
+{
+	GL::EvalCoord1f(u);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalCoord(double u, double v)
+{
+	GL::EvalCoord2d(u,v);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalCoord(float u, float v)
+{
+	GL::EvalCoord2f(u,v);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalMesh(GL_FLAGS mode, int i1, int i2)
+{
+	GL::EvalMesh1(mode, i1, i2);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalMesh(GL_FLAGS mode, int i1, int i2, int j1, int j2)
+{
+	GL::EvalMesh2(mode, i1, i2, j1, j2);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalPoint(int i)
+{
+	GL::EvalPoint1(i);
+}
+
+void System::Drawing::GLSharp::GLSharp::EvalPoint(int i, int j)
+{
+	GL::EvalPoint2(i,j);
+}
+
 void System::Drawing::GLSharp::GLSharp::Fog(GL_FLAGS name, float param)
 {
 	GL::Fogf(name, param);
@@ -135,6 +175,118 @@ void System::Drawing::GLSharp::GLSharp::Normal(array<short> ^v)
 void System::Drawing::GLSharp::GLSharp::Normal(array<char> ^v)
 {
 	GL::Normal3bv(v);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(double x, double y)
+{
+	GL::RasterPos2d(x,y);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(float x, float y)
+{
+	GL::RasterPos2f(x,y);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(int x, int y)
+{
+	GL::RasterPos2i(x,y);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(short x, short y)
+{
+	GL::RasterPos2s(x,y);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(double x, double y, double z)
+{
+	GL::RasterPos3d(x,y,z);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(float x, float y, float z)
+{
+	GL::RasterPos3f(x,y,z);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(int x, int y, int z)
+{
+	GL::RasterPos3i(x,y,z);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(short x, short y, short z)
+{
+	GL::RasterPos3s(x,y,z);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(double x, double y, double z, double w)
+{
+	GL::RasterPos4d(x,y,z,w);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(float x, float y, float z, float w)
+{
+	GL::RasterPos4f(x,y,z,w);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(int x, int y, int z, int w)
+{
+	GL::RasterPos4i(x,y,z,w);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(short x, short y, short z, short w)
+{
+	GL::RasterPos4s(x,y,z,w);
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(array<double> ^v)
+{
+	switch(v->Length)
+	{
+	case 2: GL::RasterPos2dv(v);
+		break;
+	case 3: GL::RasterPos3dv(v);
+		break;
+	case 4: GL::RasterPos4dv(v);
+		break;
+	}
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(array<float> ^v)
+{
+	switch(v->Length)
+	{
+	case 2: GL::RasterPos2fv(v);
+		break;
+	case 3: GL::RasterPos3fv(v);
+		break;
+	case 4: GL::RasterPos4fv(v);
+		break;
+	}
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(array<int> ^v)
+{
+	switch(v->Length)
+	{
+	case 2: GL::RasterPos2iv(v);
+		break;
+	case 3: GL::RasterPos3iv(v);
+		break;
+	case 4: GL::RasterPos4iv(v);
+		break;
+	}
+}
+
+void System::Drawing::GLSharp::GLSharp::RasterPos(array<short> ^v)
+{
+	switch(v->Length)
+	{
+	case 2: GL::RasterPos2sv(v);
+		break;
+	case 3: GL::RasterPos3sv(v);
+		break;
+	case 4: GL::RasterPos4sv(v);
+		break;
+	}
 }
 
 void System::Drawing::GLSharp::GLSharp::Rect(float x1, float y1, float x2, float y2)
