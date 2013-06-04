@@ -70,22 +70,22 @@ IntPtr System::Drawing::GLSharp::WGL::CreatePixelFormatDescriptor(PFD_FLAGS flag
 	Int32 m_depth_buffer = depth_buffer == 0 ? 16 : depth_buffer;
 
 	PIXELFORMATDESCRIPTOR pfd = {
-		sizeof(PIXELFORMATDESCRIPTOR),  /* size */
-		1,                              /* version */
-		m_flags,               /* support double-buffering */
-		color_type,                  /* color type */
-		m_colour_depth,                             /* prefered color depth */
-		0, 0, 0, 0, 0, 0,               /* color bits (ignored) */
-		0,                              /* no alpha buffer */
-		0,                              /* alpha bits (ignored) */
-		0,                              /* no accumulation buffer */
-		0, 0, 0, 0,                     /* accum bits (ignored) */
-		m_depth_buffer,                             /* depth buffer */
-		0,                              /* no stencil buffer */
-		0,                              /* no auxiliary buffers */
-		PFD_MAIN_PLANE,                 /* main layer */
-		0,                              /* reserved */
-		0, 0, 0,                        /* no layer, visible, damage masks */
+		sizeof(PIXELFORMATDESCRIPTOR),
+		1,
+		m_flags,
+		color_type,
+		m_colour_depth,
+		0, 0, 0, 0, 0, 0,
+		0,
+		0,
+		0,
+		0, 0, 0, 0,
+		m_depth_buffer,
+		0,
+		0,
+		PFD_MAIN_PLANE,
+		0,
+		0, 0, 0,
 	};
 
 	return IntPtr::IntPtr(&pfd);
