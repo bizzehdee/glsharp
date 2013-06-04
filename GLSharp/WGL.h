@@ -1,5 +1,7 @@
 #pragma once
 
+#include "PixelFormatDescriptor.h"
+
 using namespace System;
 
 namespace System {
@@ -35,8 +37,11 @@ namespace System {
 				Boolean SwapBuffers(IntPtr hdc);
 
 				IntPtr CreatePixelFormatDescriptor(PFD_FLAGS flags, Int32 color_type, Int32 colour_depth, Int32 depth_buffer);
+				System::Drawing::GLSharp::PixelFormatDescriptor ^CreatePixelFormatDescriptor();
 				Int32 ChoosePixelFormat(IntPtr hdc, IntPtr pfd);
+				Int32 ChoosePixelFormat(IntPtr hdc, System::Drawing::GLSharp::PixelFormatDescriptor ^pfd);
 				Int32 SetPixelFormat(IntPtr hdc, Int32 pf, IntPtr pfd);
+				Int32 SetPixelFormat(IntPtr hdc, Int32 pf, System::Drawing::GLSharp::PixelFormatDescriptor ^pfd);
 			};
 
 		}

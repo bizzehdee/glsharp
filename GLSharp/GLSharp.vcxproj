@@ -154,6 +154,7 @@
     <ClInclude Include="GL.h" />
     <ClInclude Include="GLForm.h" />
     <ClInclude Include="GLSharp.h" />
+    <ClInclude Include="PixelFormatDescriptor.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Stdafx.h" />
     <ClInclude Include="WGL.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="GL.cpp" />
     <ClCompile Include="GLForm.cpp" />
     <ClCompile Include="GLSharp.cpp" />
+    <ClCompile Include="PixelFormatDescriptor.cpp" />
     <ClCompile Include="Stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

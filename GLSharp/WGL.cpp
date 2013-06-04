@@ -91,6 +91,11 @@ IntPtr System::Drawing::GLSharp::WGL::CreatePixelFormatDescriptor(PFD_FLAGS flag
 	return IntPtr::IntPtr(&pfd);
 }
 
+System::Drawing::GLSharp::PixelFormatDescriptor ^System::Drawing::GLSharp::WGL::CreatePixelFormatDescriptor()
+{
+	return gcnew System::Drawing::GLSharp::PixelFormatDescriptor();
+}
+
 Int32 System::Drawing::GLSharp::WGL::ChoosePixelFormat(IntPtr hdc, IntPtr pfd)
 {
 	HDC m_hdc = (HDC)hdc.ToPointer();
@@ -99,10 +104,24 @@ Int32 System::Drawing::GLSharp::WGL::ChoosePixelFormat(IntPtr hdc, IntPtr pfd)
 	return ::ChoosePixelFormat(m_hdc, m_pfd);
 }
 
+Int32 System::Drawing::GLSharp::WGL::ChoosePixelFormat(IntPtr hdc, System::Drawing::GLSharp::PixelFormatDescriptor ^pfd)
+{
+	HDC m_hdc = (HDC)hdc.ToPointer();
+
+	return ::ChoosePixelFormat(m_hdc, pfd);
+}
+
 Int32 System::Drawing::GLSharp::WGL::SetPixelFormat(IntPtr hdc, Int32 pf, IntPtr pfd)
 {
 	HDC m_hdc = (HDC)hdc.ToPointer();
 	PIXELFORMATDESCRIPTOR *m_pfd = (PIXELFORMATDESCRIPTOR *)pfd.ToPointer();
 
 	return ::SetPixelFormat(m_hdc, pf, m_pfd);
+}
+
+Int32 System::Drawing::GLSharp::WGL::SetPixelFormat(IntPtr hdc, Int32 pf, System::Drawing::GLSharp::PixelFormatDescriptor ^pfd)
+{
+	HDC m_hdc = (HDC)hdc.ToPointer();
+
+	return ::SetPixelFormat(m_hdc, pf, pfd);
 }
