@@ -765,7 +765,25 @@ namespace System {
 				void StencilFunc(GL_FLAGS func, int ref, UInt32 mask);
 				void StencilMask(UInt32 mask);
 				void StencilOp(GL_FLAGS fail, GL_FLAGS zfail, GL_FLAGS zpass);
-				void TexCoordPointer(int size, GL_FLAGS type, int stride, array<IntPtr> ^pointer);
+				void TexCoordPointer(int size, GL_FLAGS type, int stride, array<IntPtr> ^pointer);/*not implemented*/
+				void TexEnvf(GL_FLAGS target, GL_FLAGS pname, float param);
+				void TexEnvfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^params);
+				void TexEnvi(GL_FLAGS target, GL_FLAGS pname, int param);
+				void TexEnviv(GL_FLAGS target, GL_FLAGS pname, array<int> ^params);
+				void TexGend(GL_FLAGS coord, GL_FLAGS pname, double param);
+				void TexGendv(GL_FLAGS coord, GL_FLAGS pname, array<double> ^params);
+				void TexGenf(GL_FLAGS coord, GL_FLAGS pname, float param);
+				void TexGenfv(GL_FLAGS coord, GL_FLAGS pname, array<float> ^params);
+				void TexGeni(GL_FLAGS coord, GL_FLAGS pname, int param);
+				void TexGeniv(GL_FLAGS coord, GL_FLAGS pname, array<int> ^params);
+				void TexImage1D(GL_FLAGS target, int level, int internalformat, int width, int border, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer);/*not implemented*/
+				void TexImage2D(GL_FLAGS target, int level, int internalformat, int width, int height, int border, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer);/*not implemented*/
+				void TexParameterf(GL_FLAGS target, GL_FLAGS pname, float param);
+				void TexParameterfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^params);
+				void TexParameteri(GL_FLAGS target, GL_FLAGS pname, int param);
+				void TexParameteriv(GL_FLAGS target, GL_FLAGS pname, array<int> ^params);
+				void TexSubImage1D(GL_FLAGS target, int level, int xoffset, int width, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer);/*not implemented*/
+				void TexSubImage2D(GL_FLAGS target, int level, int xoffset, int yoffset, int width, int height, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer);/*not implemented*/
 				void Viewport(Int32 x, Int32 y, Int32 w, Int32 h);
 
 				/**/

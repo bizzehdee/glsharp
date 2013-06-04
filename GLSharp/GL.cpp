@@ -1016,6 +1016,115 @@ void System::Drawing::GLSharp::GL::TexCoordPointer(int size, GL_FLAGS type, int 
 	throw gcnew Exception(m_str);
 }
 
+void System::Drawing::GLSharp::GL::TexEnvf(GL_FLAGS target, GL_FLAGS pname, float param)
+{
+	glTexEnvf((UInt32)target, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexEnvfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^params)
+{
+	pin_ptr<float> m_params_ptr = &params[0];
+	glTexEnvfv((UInt32)target, (UInt32)pname, m_params_ptr);
+}
+
+void System::Drawing::GLSharp::GL::TexEnvi(GL_FLAGS target, GL_FLAGS pname, int param)
+{
+	glTexEnvi((UInt32)target, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexEnviv(GL_FLAGS target, GL_FLAGS pname, array<int> ^params)
+{
+	pin_ptr<int> m_params_ptr = &params[0];
+	glTexEnviv((UInt32)target, (UInt32)pname, m_params_ptr);
+}
+
+void System::Drawing::GLSharp::GL::TexGend(GL_FLAGS coord, GL_FLAGS pname, double param)
+{
+	glTexGend((UInt32)coord, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexGendv(GL_FLAGS coord, GL_FLAGS pname, array<double> ^params)
+{
+	pin_ptr<double> m_params_ptr = &params[0];
+	glTexGendv((UInt32)coord, (UInt32)pname, m_params_ptr);
+}
+
+void System::Drawing::GLSharp::GL::TexGenf(GL_FLAGS coord, GL_FLAGS pname, float param)
+{
+	glTexGenf((UInt32)coord, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexGenfv(GL_FLAGS coord, GL_FLAGS pname, array<float> ^params)
+{
+	pin_ptr<float> m_params_ptr = &params[0];
+	glTexGenfv((UInt32)coord, (UInt32)pname, m_params_ptr);
+}
+
+void System::Drawing::GLSharp::GL::TexGeni(GL_FLAGS coord, GL_FLAGS pname, int param)
+{
+	glTexGeni((UInt32)coord, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexGeniv(GL_FLAGS coord, GL_FLAGS pname, array<int> ^params)
+{
+	pin_ptr<int> m_params_ptr = &params[0];
+	glTexGeniv((UInt32)coord, (UInt32)pname, m_params_ptr);
+}
+
+/// <summary> NOT IMPLEMENTED </summary>
+void System::Drawing::GLSharp::GL::TexImage1D(GL_FLAGS target, int level, int internalformat, int width, int border, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer)
+{
+	String ^m_str = gcnew System::String(MethodBase::GetCurrentMethod()->Name);
+	m_str->Concat(" not currently implemented");
+	throw gcnew Exception(m_str);
+}
+
+/// <summary> NOT IMPLEMENTED </summary>
+void System::Drawing::GLSharp::GL::TexImage2D(GL_FLAGS target, int level, int internalformat, int width, int height, int border, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer)
+{
+	String ^m_str = gcnew System::String(MethodBase::GetCurrentMethod()->Name);
+	m_str->Concat(" not currently implemented");
+	throw gcnew Exception(m_str);
+}
+
+void System::Drawing::GLSharp::GL::TexParameterf(GL_FLAGS target, GL_FLAGS pname, float param)
+{
+	glTexParameterf((UInt32)target, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexParameterfv(GL_FLAGS target, GL_FLAGS pname, array<float> ^params)
+{
+	pin_ptr<float> m_params_ptr = &params[0];
+	glTexParameterfv((UInt32)target, (UInt32)pname, m_params_ptr);
+}
+
+void System::Drawing::GLSharp::GL::TexParameteri(GL_FLAGS target, GL_FLAGS pname, int param)
+{
+	glTexParameteri((UInt32)target, (UInt32)pname, param);
+}
+
+void System::Drawing::GLSharp::GL::TexParameteriv(GL_FLAGS target, GL_FLAGS pname, array<int> ^params)
+{
+	pin_ptr<int> m_params_ptr = &params[0];
+	glTexParameteriv((UInt32)target, (UInt32)pname, m_params_ptr);
+}
+
+/// <summary> NOT IMPLEMENTED </summary>
+void System::Drawing::GLSharp::GL::TexSubImage1D(GL_FLAGS target, int level, int xoffset, int width, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer)
+{
+	String ^m_str = gcnew System::String(MethodBase::GetCurrentMethod()->Name);
+	m_str->Concat(" not currently implemented");
+	throw gcnew Exception(m_str);
+}
+
+/// <summary> NOT IMPLEMENTED </summary>
+void System::Drawing::GLSharp::GL::TexSubImage2D(GL_FLAGS target, int level, int xoffset, int yoffset, int width, int height, GL_FLAGS format, GL_FLAGS type, array<IntPtr> ^pointer)
+{
+	String ^m_str = gcnew System::String(MethodBase::GetCurrentMethod()->Name);
+	m_str->Concat(" not currently implemented");
+	throw gcnew Exception(m_str);
+}
+
 void System::Drawing::GLSharp::GL::Viewport(Int32 x, Int32 y, Int32 w, Int32 h)
 {
 	glViewport(x,y,w,h);
